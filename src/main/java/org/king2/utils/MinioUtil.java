@@ -36,7 +36,6 @@ public class MinioUtil {
     @Autowired
     private MinioDefinition minioDefinition;
 
-
     /**
      * 图片文件上传
      * @param multipartFile         文件对象
@@ -56,7 +55,7 @@ public class MinioUtil {
         // 不存在就创建
         if (!isExist) {
             minioClient.makeBucket(currentBucketName);
-            //创建捅策略(" *  代表任何人都可以在线读取文件信息")
+            //创建捅策略(" *  代表任何人都可以在线读取文件信息,注意：4.0后就貌似不能设置桶策略了")
             minioClient.setBucketPolicy(currentBucketName,"*", PolicyType.READ_WRITE);
         }
         // 上传文件
@@ -130,7 +129,7 @@ public class MinioUtil {
      */
     @SneakyThrows
     public Object delBucketName(String bucketName){
-        ///判断捅是否存在
+        ///判断捅是否存在(注意：这种方式只能删除空桶)
         if(minioClient.bucketExists(bucketName)){
             minioClient.removeBucket(bucketName);
         }

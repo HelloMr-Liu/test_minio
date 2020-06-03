@@ -13,8 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SuppressWarnings("all")
 @SpringBootApplication
 public class Minio_7878 {
-
-
     public static void main(String[] args) {
         SpringApplication.run(Minio_7878.class);
     }

@@ -28,10 +28,21 @@ public class FileController {
     @GetMapping("/upload")
     @SneakyThrows
     public Object upload(MultipartFile file){
-
         //获取新的文件名称
         String newFileName=minioUtil.createName(file);
         Object o = minioUtil.uploadFile(file, newFileName);
         return o.toString();
+    }
+
+    @GetMapping("/deleteBucket")
+    @SneakyThrows
+    public Object deleteBucket(String bucketName){
+        return minioUtil.delBucketName(bucketName);
+    }
+
+    @GetMapping("/deleteFile")
+    @SneakyThrows
+    public Object deleteFile(String fileName){
+        return minioUtil.delFile(fileName);
     }
 }

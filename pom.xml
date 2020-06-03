@@ -38,19 +38,17 @@
         <dependency>
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
-            <version>3.0.10</version>
+            <version>3.0.12</version>
         </dependency>
 
 
-        <!-- LOMBOK依赖 -->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.14</version>
+            <version>1.18.4</version>
+            <scope>provided</scope>
         </dependency>
-
-
     </dependencies>
-
 
 </project>
