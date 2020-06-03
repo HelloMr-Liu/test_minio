@@ -1,0 +1,12 @@
+#配置端口
+server:
+  port: 7878
+
+
+spring:
+  servlet:
+    multipart:
+      #单个文件
+      max-file-size: 20MB
+      #上传文件总大小
+      max-request-size: 100MB
