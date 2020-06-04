@@ -36,13 +36,20 @@ public class FileController {
 
     @GetMapping("/deleteBucket")
     @SneakyThrows
-    public Object deleteBucket(String bucketName){
-        return minioUtil.delBucketName(bucketName);
+    public String deleteBucket(String bucketName){
+        return minioUtil.delBucketName(bucketName).toString();
     }
+
+    @GetMapping("/delFileByBucket")
+    @SneakyThrows
+    public String delFileByBucket(String bucketName){
+         return minioUtil.delFileByBucket(bucketName).toString();
+    }
+
 
     @GetMapping("/deleteFile")
     @SneakyThrows
     public Object deleteFile(String fileName){
-        return minioUtil.delFile(fileName);
+        return minioUtil.delFile(fileName).toString();
     }
 }

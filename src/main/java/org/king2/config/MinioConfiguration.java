@@ -29,19 +29,17 @@ public class MinioConfiguration {
         );
     }
 
-
     /**
-     * 创建minio客户端操作工具类
+     * 创建minio客户端操作类
      * @return
      */
     @Bean
     @SneakyThrows
-    public MinioClient minioClient(MinioDefinition minioDefinition){
+    public MinioClient minioClient(MinioDefinition minioDefinition) {
         return new MinioClient(
                 minioDefinition.getUrl(),
                 minioDefinition.getAccessKey(),
                 minioDefinition.getSecretKey()
         );
-
     }
 }
